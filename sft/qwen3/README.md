@@ -21,3 +21,6 @@ python dataset_parse.py
 https://swanlab.cn/space/~
 Use an existing SwanLab account.
 api key：Z4x70M1BP5Twi1XWZLgbZ
+
+## 4. 推理模型
+python model_inference.py
