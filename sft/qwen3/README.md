@@ -7,4 +7,17 @@ pip install transformers==4.51.3
 pip install peft==0.11.1
 pip install accelerate==1.6.0
 pip install swanlab==0.5.7
+pip install multiprocess
+pip install pandas
+pip install aiohttp
+pip install xxhash
+pip install addict
 
+## 2. 生成训练集和测评集
+python dataset_parse.py
+生成 train.jsonl 和 val.jsonl
+
+## 3. 观测训练进展
+https://swanlab.cn/space/~
+Use an existing SwanLab account.
+api key：Z4x70M1BP5Twi1XWZLgbZ
