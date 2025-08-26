@@ -1,6 +1,7 @@
 from modelscope.msdatasets import MsDataset
 import json
 import random
+import os
 
 random.seed(42)
 
@@ -13,12 +14,17 @@ split_idx = int(len(data_list) * 0.9)
 train_data = data_list[:split_idx]
 val_data = data_list[split_idx:]
 
-with open('train.jsonl', 'w', encoding='utf-8') as f:
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+train_dataset_path = os.path.join(current_dir, "datasets/train.jsonl")
+test_dataset_path = os.path.join(current_dir, "datasets/val.jsonl")
+
+with open(train_dataset_path, 'w', encoding='utf-8') as f:
     for item in train_data:
         json.dump(item, f, ensure_ascii=False)
         f.write('\n')
 
-with open('val.jsonl', 'w', encoding='utf-8') as f:
+with open(test_dataset_path, 'w', encoding='utf-8') as f:
     for item in val_data:
         json.dump(item, f, ensure_ascii=False)
         f.write('\n')
